@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EtherGallery/static/css/main.ab0de3b5.css",
+    "main.js": "/EtherGallery/static/js/main.0a42a289.js",
+    "index.html": "/EtherGallery/index.html",
+    "main.ab0de3b5.css.map": "/EtherGallery/static/css/main.ab0de3b5.css.map",
+    "main.0a42a289.js.map": "/EtherGallery/static/js/main.0a42a289.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab0de3b5.css",
+    "static/js/main.0a42a289.js"
+  ]
+}
