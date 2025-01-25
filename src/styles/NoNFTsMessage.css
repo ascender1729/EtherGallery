@@ -1,0 +1,83 @@
+.no-nfts-container {
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .no-nfts-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .no-nfts-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .no-nfts-title {
+    font-size: 1.5rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .no-nfts-text {
+    color: var(--text-secondary);
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeIn 0.5s ease-out 0.2s both;
+  }
+  
+  .no-nfts-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(0, 255, 157, 0.1), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(123, 63, 228, 0.1), transparent 40%);
+    animation: rotateBackground 10s linear infinite;
+  }
+  
+  @keyframes rotateBackground {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .no-nfts-container {
+      padding: 2rem 1rem;
+    }
+  
+    .no-nfts-icon {
+      font-size: 3rem;
+    }
+  
+    .no-nfts-title {
+      font-size: 1.25rem;
+    }
+  
+    .no-nfts-text {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  }

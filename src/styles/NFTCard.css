@@ -1,0 +1,149 @@
+.nft-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .nft-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba(0, 255, 157, 0.1) 45%,
+      rgba(123, 63, 228, 0.1) 55%,
+      transparent 100%
+    );
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+  
+  .nft-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .nft-card:hover::before {
+    opacity: 1;
+  }
+  
+  .nft-image-container {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+  
+  .nft-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .nft-card:hover .nft-image {
+    transform: scale(1.1);
+  }
+  
+  .nft-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 100%
+    );
+  }
+  
+  .collection-badge,
+  .price-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+  
+  .collection-badge {
+    background: rgba(0, 255, 157, 0.2);
+    color: #00ff9d;
+  }
+  
+  .price-badge {
+    background: rgba(123, 63, 228, 0.2);
+    color: #7b3fe4;
+  }
+  
+  .nft-info {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nft-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nft-owner {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+  }
+  
+  .nft-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .view-button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #00ff9d, #7b3fe4);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .view-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+  }
+  
+  .card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 255, 157, 0.2) 0%,
+      transparent 70%
+    );
+  }
+  
+  .nft-card:hover .card-glow {
+    opacity: 1;
+  }

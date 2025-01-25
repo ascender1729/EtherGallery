@@ -1,0 +1,121 @@
+/* styles/FilterBar.css */
+.filter-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--gradient-card);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .filter-select,
+  .price-input,
+  .sort-select {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-select:hover,
+  .price-input:hover,
+  .sort-select:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--neon-shadow);
+  }
+  
+  .filter-select:focus,
+  .price-input:focus,
+  .sort-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.2);
+  }
+  
+  .price-filters {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+  
+  option {
+    background: var(--background-dark);
+    color: var(--text-primary);
+    padding: 0.5rem;
+  }
+  
+  .filter-group {
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .filter-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
+  
+  /* Custom Dropdown Arrow */
+  select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--primary-color) 50%),
+                      linear-gradient(135deg, var(--primary-color) 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+                        calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px,
+                    5px 5px;
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-bar {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+  
+    .price-filters {
+      flex-direction: column;
+    }
+  }
+  
+  /* Loading Animation */
+  .filter-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .filter-loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--card-border);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }

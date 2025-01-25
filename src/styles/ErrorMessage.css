@@ -1,0 +1,70 @@
+.error-container {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    animation: fadeInError 0.3s ease-out;
+  }
+  
+  .error-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
+  
+  .error-icon {
+    font-size: 1.5rem;
+    animation: shake 0.5s ease-out;
+  }
+  
+  .error-text {
+    color: #ff4d4d;
+    font-size: 1rem;
+    flex: 1;
+  }
+  
+  .error-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 0, 0.1));
+    z-index: -1;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes fadeInError {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .error-container {
+      padding: 1rem;
+    }
+  
+    .error-icon {
+      font-size: 1.25rem;
+    }
+  
+    .error-text {
+      font-size: 0.9rem;
+    }
+  }

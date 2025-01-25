@@ -1,0 +1,79 @@
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .address-input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 16px;
+    color: white;
+    font-size: 14px;
+    width: 260px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .address-input:focus {
+    outline: none;
+    border-color: rgba(0, 255, 157, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.1);
+  }
+  
+  .address-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .view-nfts-button {
+    background: linear-gradient(45deg, #00ff9d, #7b3fe4);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .view-nfts-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 255, 157, 0.3);
+  }
+  
+  .view-nfts-button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Glass effect for both elements */
+  .address-input,
+  .view-nfts-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .address-input::before,
+  .view-nfts-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  
+  .view-nfts-button:hover::before {
+    left: 100%;
+  }

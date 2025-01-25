@@ -1,0 +1,190 @@
+.app {
+    min-height: 100vh;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .app.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .app-header {
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    transition: transform var(--transition-fast);
+  }
+  
+  .app-header:hover {
+    transform: translateY(-5px);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .logo-container {
+    transform-origin: left center;
+  }
+  
+  .logo-container h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .active-address-container {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: all var(--transition-fast);
+  }
+  
+  .active-address-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--neon-shadow);
+  }
+  
+  .address-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .address-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .address-value {
+    font-size: 1.1rem;
+    color: var(--accent-green);
+    font-family: monospace;
+  }
+  
+  .view-own-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .view-own-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--neon-shadow);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .app {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .logo-container {
+      transform-origin: center;
+    }
+  
+    .header-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .active-address-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .address-info {
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app {
+      padding: 1rem;
+    }
+  
+    .app-header {
+      padding: 1rem;
+    }
+  
+    .active-address-container {
+      padding: 1rem;
+    }
+  
+    .address-value {
+      font-size: 0.9rem;
+      word-break: break-all;
+    }
+  }
+  
+  /* Animation Classes */
+  .slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Loading Animation */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--glass-background);
+    border-top-color: var(--accent-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }

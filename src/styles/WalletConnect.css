@@ -1,0 +1,47 @@
+.connect-wallet-button {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 255, 157, 0.1) 0%,
+      rgba(123, 63, 228, 0.1) 100%
+    );
+    border: 1px solid rgba(0, 255, 157, 0.2);
+    color: #00ff9d;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 255, 157, 0.1);
+  }
+  
+  .connect-wallet-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 255, 157, 0.2);
+    border-color: rgba(0, 255, 157, 0.4);
+  }
+  
+  .connect-wallet-button.connected {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 255, 157, 0.2) 0%,
+      rgba(123, 63, 228, 0.2) 100%
+    );
+    border-color: rgba(0, 255, 157, 0.6);
+    color: #00ff9d;
+  }
+  
+  /* Animation for connecting state */
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+  }
+  
+  .connect-wallet-button:active {
+    transform: translateY(1px);
+    animation: pulse 1.5s infinite;
+  }
